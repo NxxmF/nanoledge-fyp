@@ -9,7 +9,7 @@ import PostsSortPanel from '@/components/common/posts-sort-panel';
 import Head from 'next/head';
 import useHome from '@/components/home/use-home';
 import HomeFallbackCard from '@/components/home/home-fallback-card';
-import HomePostIput from '@/components/home/home-post-input';
+import HomePostInput from '@/components/home/home-post-input';
 import { authOptions } from './api/auth/[...nextauth]';
 
 const Home: NextPage = () => {
@@ -25,11 +25,11 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Social Network</title>
-        <meta property="og:title" content="Twitterek" />
+        <title>Nanoledge</title>
+        <meta property="og:title" content="Nanoledge" />
       </Head>
       <MainLayout>
-        <HomePostIput />
+        <HomePostInput />
         <PostsSortPanel pathname="/" />
         {isPostsNotExists ? (
           <HomeFallbackCard />

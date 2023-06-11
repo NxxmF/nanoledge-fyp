@@ -43,7 +43,7 @@ export default function SignIn() {
 
       <div className="p-5 lg:p-20 h-full max-w-[800px] mx-auto flex flex-col justify-center">
         <h1 className="font-poppins text-2xl lg:text-5xl font-semibold mb-5">
-          Sign In
+          Nanoledge Sign In
         </h1>
         <p className="text-lg lg:text-2xl mb-10 lg:mb-20">
           Join our growing community and share your moments with others{' '}

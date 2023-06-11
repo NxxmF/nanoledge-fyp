@@ -2,7 +2,7 @@ import { toast } from 'react-toastify';
 import TextHeader from '../common/text-header';
 import PostInput from '../post-input/post-input';
 
-const HomePostIput = () => {
+const HomePostInput = () => {
   const addPostCallback = () => {
     toast('Your post was added successfully', {
       type: 'success',
@@ -18,4 +18,4 @@ const HomePostIput = () => {
   );
 };
 
-export default HomePostIput;
+export default HomePostInput;
