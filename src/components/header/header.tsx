@@ -9,7 +9,7 @@ const Header = () => (
     <Link href="/" passHref>
       <a>
         <p className="text-blue-900 dark:text-white font-poppins font-semibold text-lg md:text-2xl w-min md:w-fit">
-          Social Network
+          Nanoledge
         </p>
       </a>
     </Link>
