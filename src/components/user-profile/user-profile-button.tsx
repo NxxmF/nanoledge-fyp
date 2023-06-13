@@ -44,7 +44,7 @@ const UserProfileButton = ({
     );
   };
 
-  return <Button onClick={openCommuntiSettingsModal}>Settings</Button>;
+  return <Button onClick={openCommuntiSettingsModal}>Edit Profile</Button>;
 };
 
 export default UserProfileButton;

@@ -1,6 +1,5 @@
 import axios from 'axios';
 
-
 const CLOUDINARY_UPLOAD_PRESET = 'uvm9hyxi';
 const CLOUDINARY_UPLOAD_FALLBACK_PRESET = 'keonszjo';
 const CLOUDINARY_UPLOAD_LINK =
