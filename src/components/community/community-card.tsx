@@ -67,7 +67,7 @@ const CommunityCard = ({
           <div className="ml-auto flex sm:space-x-1 flex-col-reverse items-baseline justify-end sm:flex-row">
             {isOwner && (
               <div className="ml-auto text-sm  bg-yellow-200 dark:bg-yellow-300 text-yellow-800 px-1 py-[2px] rounded-md mb-1">
-                onwer
+                owner
               </div>
             )}
             {joinedByMe && (
