@@ -46,8 +46,8 @@ export default function SignIn() {
           Nanoledge Sign In
         </h1>
         <p className="text-lg lg:text-2xl mb-10 lg:mb-20">
-          Join our growing community and share your moments with others{' '}
-          <span className="text-3xl">👍</span>
+          Join our social community and share your knowledge with others in a
+          micro-learning environment <span className="text-3xl">👍</span>
         </p>
         <div className="flex lg:hidden">
           <div className="relative flex w-full items-center justify-center mb-10">
