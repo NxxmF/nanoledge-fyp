@@ -97,6 +97,7 @@ model Post {
   link                String?
   sharedBy            UserShare[]
   NotificationMention NotificationMention[] @relation(name: "notificationMention")
+  videos              Video[]               @relation(name: "postVideos")
 }
 
 model Mention {
@@ -194,6 +195,14 @@ model Image {
   postId      String @db.Text
   width       Int
   height      Int
+}
+
+model Video {
+  id          String @id @default(cuid())
+  url         String @db.Text
+  fallbackUrl String @db.Text
+  post        Post   @relation(name: "postVideos", fields: [postId], references: [id], onDelete: Cascade)
+  postId      String @db.Text
 }
 
 model Comment {
