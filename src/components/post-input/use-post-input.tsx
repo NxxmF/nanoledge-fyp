@@ -6,7 +6,7 @@ import { useAddPostMutation } from '@/hooks/mutation';
 import { useState } from 'react';
 import { PostInputFormType } from './types';
 
-const MAX_FILES_NUMBER = 4;
+const MAX_FILES_NUMBER = 6;
 
 interface UsePostInputProps {
   submitCallback?: () => void;
@@ -49,7 +49,7 @@ const usePostInput = ({
     const currentImages = getValues('images');
 
     if (files.length + currentImages.length > MAX_FILES_NUMBER) {
-      toast('You can add up to 4 images', {
+      toast('You can add up to 6 images', {
         type: 'error',
       });
     }
@@ -131,7 +131,7 @@ const usePostInput = ({
       mentions: mentions.map((mention) => mention.id),
       shareParentId: sharedPostId,
       communityId,
-      link: getValues('link.isOpen') ?  link.value : undefined,
+      link: getValues('link.isOpen') ? link.value : undefined,
     });
 
     reset();
