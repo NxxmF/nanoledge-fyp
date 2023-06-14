@@ -10,7 +10,7 @@ const TrendingTagsList = () => {
 
   return (
     <aside className=" bg-white rounded-xl dark:bg-primary-dark-200">
-      <TextHeader className=" py-3 px-5 ">Trends this week</TextHeader>
+      <TextHeader className=" py-3 px-5 ">Trending Topics</TextHeader>
       <hr className=" px-5 mx-5 dark:border-primary-700" />
       {isSuccess ? (
         data.map((tagData) => (
