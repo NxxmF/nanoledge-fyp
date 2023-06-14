@@ -42,7 +42,7 @@ const useUser = () => {
     {
       id: '2',
       filterName: 'images',
-      displayName: 'images',
+      displayName: 'Medias',
     },
     {
       id: '3',
