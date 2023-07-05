@@ -88,14 +88,14 @@ export default function SignIn() {
               onClick={() => signIn('google')}
               className="ring rounded-full flex items-center justify-center space-x-3 p-3 lg:text-lg"
             >
-              <GoogleIcon /> <span>Sign in with google</span>
+              <GoogleIcon /> <span>Sign in with Google</span>
             </button>
             <button
               type="button"
               onClick={() => signIn('github')}
               className="ring rounded-full flex items-center justify-center space-x-3 p-3 lg:text-lg"
             >
-              <GithubIcon /> <span>Sign in with github</span>
+              <GithubIcon /> <span>Sign in with GitHub</span>
             </button>
           </div>
         </div>
