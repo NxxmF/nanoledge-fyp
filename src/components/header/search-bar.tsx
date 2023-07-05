@@ -33,6 +33,9 @@ const SearchBar = () => {
     if (searchEntry.type === SearchType.USER) {
       router.push(`/user/${userId}`);
     }
+    if (searchEntry.type === SearchType.TAG) {
+      router.push(`/tag/${userId}`);
+    }
     addSearchHistoryEntry(searchEntry);
   };
 
@@ -56,6 +59,7 @@ const SearchBar = () => {
         </div>
         <input
           {...inputProps}
+          placeholder="Search for user, community, topic"
           value={searchPhrase}
           onChange={handleOnChange}
           className="w-full  pl-8 p-2 md:p-3 md:pl-10 bg-primary-100 dark:bg-primary-dark-200 rounded-full focus:outline-blue-500 outline-2"

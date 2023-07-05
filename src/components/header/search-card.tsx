@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import Image from 'next/image';
@@ -24,7 +25,9 @@ const SearchCard = ({ searchEntry, isSelected }: SearchCardProps) => {
       href={
         searchEntry.type === SearchType.USER
           ? `/user/${searchEntry.id}`
-          : `/community/${searchEntry.id}`
+          : searchEntry.type === SearchType.COMMUNITY
+          ? `/community/${searchEntry.id}`
+          : `/tag/${searchEntry.id}`
       }
       key={searchEntry.id}
     >
@@ -41,6 +44,8 @@ const SearchCard = ({ searchEntry, isSelected }: SearchCardProps) => {
                 searchEntry.image ||
                 (searchEntry.type === SearchType.USER
                   ? '/images/avatar-fallback.svg'
+                  : searchEntry.type === SearchType.COMMUNITY
+                  ? '/images/community-fallback.svg'
                   : '/images/community-fallback.svg')
               }
               width="40"
@@ -56,7 +61,11 @@ const SearchCard = ({ searchEntry, isSelected }: SearchCardProps) => {
             <p className="p-1 block font-medium text-xs text-gray-400 dark:text-primary-dark-600 pt-0">
               {searchEntry.type === SearchType.USER
                 ? `${searchEntry.followersCount} followers`
-                : `${searchEntry.followersCount} members`}
+                : searchEntry.type === SearchType.COMMUNITY
+                ? `${searchEntry.followersCount} members`
+                : searchEntry.type === SearchType.TAG
+                ? `${searchEntry.followersCount} posts with ${searchEntry.title} tag`
+                : ``}
             </p>
           </div>
         </div>
