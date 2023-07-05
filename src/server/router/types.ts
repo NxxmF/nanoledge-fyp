@@ -1,6 +1,7 @@
 export enum SearchType {
   COMMUNITY,
   USER,
+  TAG,
 }
 
 export enum CommunityFilterType {

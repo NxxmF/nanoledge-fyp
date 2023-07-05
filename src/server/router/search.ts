@@ -45,6 +45,22 @@ const searchRouter = createProtectedRouter().query('getBySearchPhrase', {
       take: 5,
     });
 
+    const matchingTag = await prisma.tag.findMany({
+      where: {
+        name: {
+          contains: input.searchPhrase,
+        },
+      },
+      include: {
+        _count: {
+          select: {
+            posts: true,
+          },
+        },
+      },
+      take: 5,
+    });
+
     const matchingUsersWithFollows = matchingUsers.map((user) => ({
       type: SearchType.USER,
       id: user.id,
@@ -63,7 +79,17 @@ const searchRouter = createProtectedRouter().query('getBySearchPhrase', {
       })
     );
 
-    return [...matchingUsersWithFollows, ...matchingCommunitiesWithFollows]
+    const matchingTagWithPosts = matchingTag.map(
+      (tag) => ({
+        type: SearchType.TAG,
+        id: tag.name,
+        title: tag.name,
+        image: null,
+        followersCount: tag._count.posts,
+      })
+    );
+
+    return [...matchingUsersWithFollows, ...matchingCommunitiesWithFollows, ...matchingTagWithPosts]
       .sort((a, b) => b.followersCount - a.followersCount)
       .slice(0, 5);
   },
