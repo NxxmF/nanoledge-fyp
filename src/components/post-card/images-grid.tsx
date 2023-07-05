@@ -71,7 +71,7 @@ const ImagesGrid = ({ images }: ImagesGridProps) => {
   return (
     <div className={clsx('grid gap-2', images.length > 1 && '!grid-cols-2')}>
       {images.length > 0 &&
-        images.map((image, index) => {
+        images.slice(0, 4).map((image, index) => {
           const widthRatio = getImageWidthRatio(images.length, index);
           const heightRatio = getImageHeightRatio(images.length, index);
           return (

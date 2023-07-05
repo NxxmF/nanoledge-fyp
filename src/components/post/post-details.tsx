@@ -52,12 +52,12 @@ const PostDetails = ({ postId }: PostDetailsProps) => {
       commentElement.scrollIntoView({ behavior: 'smooth' });
     } catch (e) {
       // eslint-disable-next-line no-console
-      console.log('invalide comment id');
+      console.log('invalid comment id');
     }
   }, [router.asPath, isCommentsSuccess]);
 
   if (isError) {
-    return <ErrorFallback message="This post does't exists" />;
+    return <ErrorFallback message="This post doesn't exists" />;
   }
 
   return (

@@ -6,7 +6,7 @@ import { useAddPostMutation } from '@/hooks/mutation';
 import { useState } from 'react';
 import { PostInputFormType } from './types';
 
-const MAX_FILES_NUMBER = 6;
+const MAX_FILES_NUMBER = 8;
 
 interface UsePostInputProps {
   submitCallback?: () => void;
@@ -49,7 +49,7 @@ const usePostInput = ({
     const currentImages = getValues('images');
 
     if (files.length + currentImages.length > MAX_FILES_NUMBER) {
-      toast('You can add up to 6 images', {
+      toast('You can only add up to 8 medias', {
         type: 'error',
       });
     }
